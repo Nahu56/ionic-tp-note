@@ -32,14 +32,43 @@ export class Tab1Page {
 
   async getPosition(){
     const coordinates = await Geolocation.getCurrentPosition();
+    // const coordinates = await Geolocation.watchPosition(success, error, options);   ->  C'est watchPosition qu'il faut utiliser pour avoir un tracking  
     
     this.position = [{
       latitude: coordinates.coords.latitude, 
       longitude: coordinates.coords.longitude,
       date: this.myDate
     }]
-
-    console.log(this.position);
   }
+
+  /* -------------------------------------------------------------------------- */
+  /*                        fonctions pour watchPosition                        */
+  /* -------------------------------------------------------------------------- */
+
+  // var id, target, options;
+
+  // function success(pos) {
+  //   var crd = pos.coords;
+
+  //   if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
+  //     console.log('Bravo, vous avez atteint la cible');
+  //     navigator.geolocation.clearWatch(id);
+  //   }
+  // }
+
+  // function error(err) {
+  //   console.warn('ERROR(' + err.code + '): ' + err.message);
+  // }
+
+  // target = {
+  //   latitude : 0,
+  //   longitude: 0
+  // };
+
+  // options = {
+  //   enableHighAccuracy: false,
+  //   timeout: 5000,
+  //   maximumAge: 0
+  // };
 
 }
