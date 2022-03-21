@@ -13,5 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-pos *ngFor="let p of position">
+    <p>Lattitude : {{p.lattitude}}</p></ion-pos>
+    <p>Longitude : {{p.longitude}}</p></br> 
+    <p>Date : {{p.date}}</p></br>
+
+    </hr>
+  </ion-pos>
+
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
